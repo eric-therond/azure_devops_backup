@@ -1,7 +1,0 @@
-steps:
-  - script: |
-      echo Hello, world!
-    displayName: 'Run a one-line script'
-    env:
-      AZURE_DEVOPS_TARGET_PAT: $(azorgatargetpat)
-      AZURE_DEVOPS_SOURCE_PAT: $(azorgasourcepat)
