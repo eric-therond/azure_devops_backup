@@ -4,7 +4,7 @@
 
 ---
 
-# Installation
+## Installation
 
 ```
 pip install backup-devops
