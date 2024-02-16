@@ -1,20 +1,30 @@
+# Azure devops backup
+
+> A tool to make a backup of an azure devops organization
+
+---
+
 # Installation
 
 ```
-poetry new backup_devops
+pip install backup-devops
 ```
 
-Add dependencies
-```
-poetry add azure-devops
-poetry add GitPython
-```
+## Run the backup process
 
-## Start exporter application
+Configure the environment variables to specify the azure devops organization to backup:
+- `AZDEVOPS_BACKUP_TARGET_ORGA`
+- `AZDEVOPS_BACKUP_PAT_TARGET_ORGA`
 
-```
-poetry shell
-```
+Configure the environment variables for where to host the backup (a target azure devops organization):
+- `AZDEVOPS_BACKUP_TARGET_ORGA`
+- `AZDEVOPS_BACKUP_PAT_TARGET_ORGA`
+
 ```
 python -m backup_devops
 ```
+
+## What is backed up
+
+- source code following the original hierarchy (project, repository)
+- work items and comments
