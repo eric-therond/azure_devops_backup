@@ -14,7 +14,11 @@ class GitOperations:
         Helpers.create_dir(repo_dir)
 
         remote = f"https://{pat_orga}@dev.azure.com/{orga_name}/{project.name}/_git/{repo.name}"
-        return Repo.clone_from(remote, repo_dir)
+        repo = Repo.clone_from(remote, repo_dir)
+        for b in repo.remote().fetch():
+            repo.git.checkout('-B', b.name.split('/')[1], b.name)
+
+        return repo
        
     @staticmethod  
     def update_remote_target(tmp_dir, orga_name, pat_orga, project, repo): 

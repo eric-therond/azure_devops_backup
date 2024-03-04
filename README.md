@@ -26,5 +26,5 @@ python -m backup_devops
 
 ## What is backed up
 
-- source code following the original hierarchy (project, repository)
+- source code following the original hierarchy (project, repository (all branches))
 - work items and comments
